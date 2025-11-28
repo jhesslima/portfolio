@@ -21,3 +21,23 @@ cards.forEach(card => {
     cards.forEach(c => c.classList.remove('hovered'));
   });
 });
+
+// Página Sobre - aba das universidades
+
+  const text = document.querySelector('.universities-text');
+
+  let lastScrollY = window.scrollY;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      // scroll para baixo → mostra
+      text.classList.add('visible');
+    } else {
+      // scroll para cima → esconde
+      text.classList.remove('visible');
+    }
+
+    lastScrollY = currentScrollY;
+  });

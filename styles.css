@@ -145,6 +145,124 @@ body {
   border-left: 4px solid var(--accent);
 }
 
+/* === TRÍPTICO ALUMNI — versão minimalista === */
+
+.alumni-section {
+  margin-top: 70px;
+}
+
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.alumni-card {
+  text-decoration: none;
+  padding: 32px 20px;
+  color: #fff;
+  border: 2px solid transparent; /* invisível */
+  transition: border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.alumni-card:hover {
+  border-color: #ffffff;
+}
+
+.alumni-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.alumni-year {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  opacity: 0.55;
+  margin-top: 14px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* === UNIVERSIDADES — logos minimalistas === */
+
+.universities-section {
+  margin: 120px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.universities-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: nowrap;
+  margin: 80px auto;
+  overflow: visible;
+}
+
+.university-card {
+  width: 140px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  filter: grayscale(1);
+  transition: opacity .3s ease, filter .3s ease, transform .3s ease;
+  cursor: default;
+}
+
+.university-card:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.uni-img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.universities-section,
+.universities-grid,
+.university-card,
+.uni-img {
+  position: relative !important;
+  z-index: 999 !important;
+}
+
+.universities-text {
+  margin-top: 50px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.universities-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.big-richmond .uni-img {
+  width: 180px;
+  transform: scale(1.2);
+}
+
 /* PROJETOS */
 .cards-wrapper {
   display: flex;
