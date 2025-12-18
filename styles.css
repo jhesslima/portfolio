@@ -11,6 +11,10 @@
   --accent: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -145,7 +149,110 @@ body {
   border-left: 4px solid var(--accent);
 }
 
-/* === TRÍPTICO ALUMNI — versão minimalista === */
+/* PROJETOS */
+.cards-wrapper {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  padding-top: 20px;
+}
+
+.slide-card {
+  width: 300px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0d;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+
+.slide-card.blur {
+  filter: blur(2px) brightness(0.7);
+}
+
+a.slide-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Estado normal: imagens em preto e branco */
+.slide-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.35s ease, transform 0.35s ease;
+}
+
+/* No hover: volta à cor original */
+.slide-card:hover img {
+  filter: grayscale(0%);
+}
+
+.slide-title {
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  padding: 0 16px;
+}
+
+/* DESTAQUES ENUMERADOS */
+.highlights-numbers ol {
+  margin-left: 18px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.highlights-numbers li {
+  margin-bottom: 8px;
+}
+
+/* ---- CONTATO COM ÍCONES PB ---- */
+
+.contact-section {
+  margin-top: 80px;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 26px;
+  margin-top: 24px;
+}
+
+.icon-link img {
+  width: 26px;
+  height: 26px;
+  filter: invert(1); /* transforma preto em branco */
+  opacity: 0.85;
+  transition: 0.25s ease;
+}
+
+.icon-link:hover img {
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 64px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--muted);
+}
+
+/* PÁGINA SOBRE  === TRÍPTICO ALUMNI — versão minimalista === */
 
 .alumni-section {
   margin-top: 70px;
@@ -263,106 +370,4 @@ body {
   transform: scale(1.2);
 }
 
-/* PROJETOS */
-.cards-wrapper {
-  display: flex;
-  gap: 24px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  padding-top: 20px;
-}
-
-.slide-card {
-  width: 300px;
-  height: 290px;
-  display: flex;
-  flex-direction: column;
-  background: #0d0d0d;
-  border: 2px solid rgba(255, 255, 255, 0.05);
-  overflow: hidden;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
-a.slide-card {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Estado normal: imagens em preto e branco */
-.slide-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.35s ease, transform 0.35s ease;
-}
-
-/* No hover: volta à cor original */
-.slide-card:hover img {
-  filter: grayscale(0%);
-}
-
-.slide-title {
-  height: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  color: #000;
-  font-weight: 600;
-  font-size: 16px;
-  text-align: center;
-  padding: 0 16px;
-}
-
-/* efeito blur nos outros cards */
-.cards-wrapper:hover .slide-card:not(:hover) {
-  filter: blur(2px) brightness(0.7);
-}
-
-/* DESTAQUES ENUMERADOS */
-.highlights-numbers ol {
-  margin-left: 18px;
-  color: var(--muted);
-  font-size: 18px;
-}
-
-.highlights-numbers li {
-  margin-bottom: 8px;
-}
-
-/* ---- CONTATO COM ÍCONES PB ---- */
-
-.contact-section {
-  margin-top: 80px;
-}
-
-.contact-icons {
-  display: flex;
-  gap: 26px;
-  margin-top: 24px;
-}
-
-.icon-link img {
-  width: 26px;
-  height: 26px;
-  filter: invert(1); /* transforma preto em branco */
-  opacity: 0.85;
-  transition: 0.25s ease;
-}
-
-.icon-link:hover img {
-  opacity: 1;
-  transform: scale(1.12);
-}
-
-/* FOOTER */
-.footer {
-  margin-top: 64px;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  color: var(--muted);
-}
+/* FIM DA PÁGINA SOBRE */
