@@ -252,6 +252,70 @@ a.slide-card {
   color: var(--muted);
 }
 
+.btn-footer {
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color:rgba(255, 255, 255, 0.75);
+  align-items: center;
+}
+
+/* =============================
+   MODAL — PROJETO EM ANDAMENTO
+   ============================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-box {
+  background: #000;
+  border: 1px solid #fff;
+  padding: 40px 48px;
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+}
+
+.modal-text {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #eaeaea;
+  letter-spacing: -0.3px;
+}
+
+/* Botão fechar */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  opacity: 0.7;
+}
+
 /* PÁGINA SOBRE  === TRÍPTICO ALUMNI — versão minimalista === */
 
 .alumni-section {

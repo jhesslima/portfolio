@@ -26,20 +26,46 @@ cards.forEach(card => {
 
 // Página Sobre - aba das universidades
 
-  const text = document.querySelector('.universities-text');
+const text = document.querySelector('.universities-text');
 
-  if (text) {
-    let lastScrollY = window.scrollY;
+if (text) {
+  let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', () => {
-      const currentScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
 
-      if (currentScrollY > lastScrollY) {
-        text.classList.add('visible');
-      } else {
-        text.classList.remove('visible');
-      }
+    if (currentScrollY > lastScrollY) {
+      text.classList.add('visible');
+    } else {
+      text.classList.remove('visible');
+    }
 
-      lastScrollY = currentScrollY;
-    });
+    lastScrollY = currentScrollY;
+  });
+}
+
+// ==============================
+// MODAL — PROJETO EM ANDAMENTO
+// (somente cards com data-wip)
+// ==============================
+
+const modal = document.getElementById('modal');
+const modalClose = document.getElementById('modalClose');
+const wipCards = document.querySelectorAll('[data-wip]');
+
+wipCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    e.preventDefault(); // impede navegação
+    modal.classList.add('active');
+  });
+});
+
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('active');
   }
+});
